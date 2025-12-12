@@ -1,0 +1,237 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+  /* Mustry Blue Color Palette */
+  --color-mustry-blue-50: #D9E3FD;
+  --color-mustry-blue-100: #C6D4FD;
+  --color-mustry-blue-200: #9EB6FB;
+  --color-mustry-blue-300: #7799F9;
+  --color-mustry-blue-400: #507BF8;
+  --color-mustry-blue-500: #295EF6;
+  --color-mustry-blue-600: #0940DE;
+  --color-mustry-blue-700: #0731A8;
+  --color-mustry-blue-800: #052172;
+  --color-mustry-blue-900: #03113C;
+
+  --color-mustry-light-50: #FFFFFF;
+  --color-mustry-light-100: #FFFFFF;
+  --color-mustry-light-200: #FFFFFF;
+  --color-mustry-light-300: #E5EBFE;
+  --color-mustry-light-400: #BDCEFC;
+  --color-mustry-light-500: #96B0FB;
+  --color-mustry-light-600: #6087F9;
+  --color-mustry-light-700: #2A5FF7;
+  --color-mustry-light-800: #0940E0;
+  --color-mustry-light-900: #0631AA;
+
+  --color-mustry-dark-50: #4360AF;
+  --color-mustry-dark-100: #3D58A0;
+  --color-mustry-dark-200: #324883;
+  --color-mustry-dark-300: #273765;
+  --color-mustry-dark-400: #182138;
+  --color-mustry-dark-500: #10172A;
+  --color-mustry-dark-600: #010101;
+  --color-mustry-dark-700: #000000;
+  --color-mustry-dark-800: #000000;
+  --color-mustry-dark-900: #000000;
+
+  /* Radius */
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  /* Theme color mappings */
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --color-chart-1: hsl(var(--chart-1));
+  --color-chart-2: hsl(var(--chart-2));
+  --color-chart-3: hsl(var(--chart-3));
+  --color-chart-4: hsl(var(--chart-4));
+  --color-chart-5: hsl(var(--chart-5));
+  --color-sidebar: hsl(var(--sidebar));
+  --color-sidebar-foreground: hsl(var(--sidebar-foreground));
+  --color-sidebar-primary: hsl(var(--sidebar-primary));
+  --color-sidebar-primary-foreground: hsl(var(--sidebar-primary-foreground));
+  --color-sidebar-accent: hsl(var(--sidebar-accent));
+  --color-sidebar-accent-foreground: hsl(var(--sidebar-accent-foreground));
+  --color-sidebar-border: hsl(var(--sidebar-border));
+  --color-sidebar-ring: hsl(var(--sidebar-ring));
+}
+
+:root {
+  --radius: 0.5rem;
+
+  /* Mustry Design System - Light Mode */
+  --background: 0 0% 98%;
+  --foreground: 224 10% 15%;
+
+  --card: 0 0% 100%;
+  --card-foreground: 224 10% 15%;
+
+  --popover: 0 0% 100%;
+  --popover-foreground: 224 10% 15%;
+
+  /* Primary - Mustry Blue #295EF6 */
+  --primary: 222 93% 56%;
+  --primary-foreground: 0 0% 100%;
+
+  /* Secondary - neutral gray */
+  --secondary: 220 14% 96%;
+  --secondary-foreground: 224 10% 15%;
+
+  --muted: 220 14% 96%;
+  --muted-foreground: 220 9% 46%;
+
+  /* Accent - subtle gray */
+  --accent: 220 14% 96%;
+  --accent-foreground: 224 10% 15%;
+
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 100%;
+
+  --border: 220 13% 91%;
+  --input: 220 13% 91%;
+  --ring: 222 93% 56%;
+
+  /* Chart colors */
+  --chart-1: 222 93% 56%;
+  --chart-2: 173 58% 39%;
+  --chart-3: 43 96% 56%;
+  --chart-4: 12 76% 61%;
+  --chart-5: 276 65% 59%;
+
+  /* Sidebar */
+  --sidebar: 0 0% 98%;
+  --sidebar-foreground: 224 10% 15%;
+  --sidebar-primary: 222 93% 56%;
+  --sidebar-primary-foreground: 0 0% 100%;
+  --sidebar-accent: 220 14% 96%;
+  --sidebar-accent-foreground: 224 10% 15%;
+  --sidebar-border: 220 13% 91%;
+  --sidebar-ring: 222 93% 56%;
+}
+
+.dark {
+  /* Mustry Design System - Dark Mode */
+  --background: 224 15% 10%;
+  --foreground: 210 20% 98%;
+
+  --card: 224 15% 13%;
+  --card-foreground: 210 20% 98%;
+
+  --popover: 224 15% 13%;
+  --popover-foreground: 210 20% 98%;
+
+  /* Primary - Mustry Blue #295EF6 */
+  --primary: 222 93% 60%;
+  --primary-foreground: 0 0% 100%;
+
+  /* Secondary - neutral dark gray */
+  --secondary: 224 15% 18%;
+  --secondary-foreground: 210 20% 98%;
+
+  --muted: 224 15% 18%;
+  --muted-foreground: 215 15% 60%;
+
+  /* Accent - neutral dark */
+  --accent: 224 15% 18%;
+  --accent-foreground: 210 20% 98%;
+
+  --destructive: 0 72% 51%;
+  --destructive-foreground: 0 0% 100%;
+
+  --border: 224 15% 20%;
+  --input: 224 15% 20%;
+  --ring: 222 93% 60%;
+
+  /* Chart colors */
+  --chart-1: 222 93% 65%;
+  --chart-2: 173 58% 50%;
+  --chart-3: 43 96% 60%;
+  --chart-4: 12 76% 65%;
+  --chart-5: 276 65% 65%;
+
+  /* Sidebar */
+  --sidebar: 224 15% 13%;
+  --sidebar-foreground: 210 20% 98%;
+  --sidebar-primary: 222 93% 60%;
+  --sidebar-primary-foreground: 0 0% 100%;
+  --sidebar-accent: 224 15% 18%;
+  --sidebar-accent-foreground: 210 20% 98%;
+  --sidebar-border: 224 15% 20%;
+  --sidebar-ring: 222 93% 60%;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  /* Typography */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight;
+  }
+
+  h1 {
+    @apply text-3xl md:text-4xl lg:text-5xl;
+  }
+
+  h2 {
+    @apply text-2xl md:text-3xl lg:text-4xl;
+  }
+
+  h3 {
+    @apply text-xl md:text-2xl;
+  }
+}
+
+/* Custom scrollbar */
+@layer utilities {
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--muted)) transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: hsl(var(--muted));
+    border-radius: 4px;
+  }
+}
